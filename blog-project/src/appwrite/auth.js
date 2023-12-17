@@ -39,29 +39,26 @@ export class AuthService {
     }
   }
 
-  async getCurrUser(){
+  async getCurrUser() {
     try {
-    return  await this.account.get();
-    //can use if(accFound){
+      return await this.account.get();
+      //can use if(accFound){
       //  return accFound
-      //  else 
-       // return null; 
-    } 
-    catch (error) {
-        throw error;
+      //  else
+      // return null;
+    } catch (error) {
+      throw error;
     }
     return null; //default operation
   }
-async logout(){
+  async logout() {
     try {
-        await this.account.deleteSessions()
-        //can use delete session with session id etc
+      await this.account.deleteSessions();
+      //can use delete session with session id etc
     } catch (error) {
-        console.log ("::Logout::Appwrite",error);
-        
+      console.log("::Logout::Appwrite", error);
     }
-}
-
+  }
 }
 const authService = new AuthService();
-export default AuthService;
+export default authService;

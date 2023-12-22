@@ -25,6 +25,8 @@ function Signup() {
     } catch (error) {
       console.log("SIGNUP:: JSX ::ERROR", error.message);
       seterror(error.message);
+
+      
     }
   };
 
